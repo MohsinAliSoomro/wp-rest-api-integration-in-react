@@ -1,0 +1,20 @@
+.login {
+    text-align: center;
+}
+.input {
+    padding: 10px 5px;
+    width: 300px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(233, 233, 232);
+    border-radius: 4px;
+}
+
+.btn_login{
+    padding: 5px 5px;
+    width: 313px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(233, 233, 232);
+    border-radius: 4px;
+    background-color: rgb(233, 233, 232);
+    font-size: 20px;
+}

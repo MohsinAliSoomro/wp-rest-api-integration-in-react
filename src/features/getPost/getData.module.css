@@ -1,0 +1,15 @@
+.post {
+    box-shadow: 0 0 2px;
+    margin: 12px;
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .btn_primary{
+      background-color: transparent;
+      font-size: 15px;
+      border: 1px solid rgb(233, 233, 232);
+      border-radius: 10px;
+      text-decoration: none;
+      color: black;
+  }

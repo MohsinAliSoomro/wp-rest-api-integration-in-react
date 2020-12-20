@@ -1,8 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
-
+import getDataReducer from '../features/getPost/getDataSlice';
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    getData: getDataReducer,
   },
 });
