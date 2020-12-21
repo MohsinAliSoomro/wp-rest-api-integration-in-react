@@ -1,5 +1,8 @@
 
 # Wp-Api integration in reactjs app
+The react app is integrated with wp rest api and crud operation on the posts
+
+[App](https://github.com/MohsinAliSoomro/wp-rest-api-integration-in-react/blob/master/src/records.gif)
 ##### Deploy
 [Demo](http://wp-api-site.surge.sh/)
 
@@ -31,6 +34,8 @@ get the secret key from given link or you put your own
 
 Now you get endpoint for authentication
 - `http://yourdomain.com/wp-json/jwt-auth/v1/token`
+
+Crud Operation Endpoint for posts 
 
 ## Available Scripts
 
