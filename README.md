@@ -30,7 +30,7 @@ get the secret key from given link or you put your own
 - `define('JWT_AUTH_CORS_ENABLE', true);`
 
 Now you get endpoint for authentication
-http://yourdomain.com/wp-json/jwt-auth/v1/token
+- `http://yourdomain.com/wp-json/jwt-auth/v1/token`
 
 ## Available Scripts
 
