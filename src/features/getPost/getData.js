@@ -1,32 +1,32 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchGetPost } from './getDataSlice';
+import { useEffect, useState } from 'react';
 import Layout from '../../component/layout/Layout';
 import style from './getData.module.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 function GetDataPage() {
-	const getPost = useSelector((state) => state.getData);
-	const dispatch = useDispatch();
-
-	const GetAllPost = () => {
-		dispatch(fetchGetPost());
-	};
+	const [ posts, setPost ] = useState([]);
 
 	useEffect(() => {
 		let mounted = true;
 		if (mounted) {
-			GetAllPost();
+			axios
+				.get('http://www.holandi.nl/wp-json/wp/v2/posts')
+				.then((res) => {
+					setPost(res.data);
+				})
+				.catch((err) => {
+					console.log(err);
+				});
 		}
 		return () => (mounted = false);
 	}, []);
 
-	if (getPost.loading === true) {
+	if (posts.length === 0) {
 		return <div>Loading...</div>;
 	}
 
-	console.log(getPost);
-	
+	console.log(posts);
+
 	return (
 		<Layout>
 			<Link to="/create" className={style.btn_primary} style={{ float: 'right', margin: '10px' }}>
@@ -34,8 +34,8 @@ function GetDataPage() {
 			</Link>
 			<h1 style={{ marginLeft: '18px' }}>Posts</h1>
 			<div style={{ fontSize: '20px', padding: '10px', marginBottom: '10px' }}>
-				{!getPost.loading && getPost.post.length > 0 ? (
-					getPost.post[0].map((post) => {
+				{posts.length > 0 ? (
+					posts.map((post) => {
 						if (post === undefined) {
 							return '';
 						}

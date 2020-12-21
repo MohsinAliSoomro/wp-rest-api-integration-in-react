@@ -1,4 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+
+# Wp-Api integration in reactjs app
+
+You need a plugin JWT Auth – WordPress JSON Web Token Authentication 
+by useful team
+
+Active the plugin
+
+# steps 
+
+## Open the .htaccess file in root folder of wordpress and paste 
+
+``
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+``
+
+## Open the wp-config.php file in root folder of wordpress and paste 
+get the secret key from given link or you put your own
+[Generate secret](https://api.wordpress.org/secret-key/1.1/salt/)
+
+``
+define('JWT_AUTH_SECRET_KEY', 'your-top-secret-key');
+define('JWT_AUTH_CORS_ENABLE', true);
+``
+Now you get endpoint for authentication
+http://yourdomain.com/wp-json/jwt-auth/v1/token
 
 ## Available Scripts
 
