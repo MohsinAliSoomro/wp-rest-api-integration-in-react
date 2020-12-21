@@ -3,7 +3,6 @@ import Layout from '../../component/layout/Layout';
 import axios from 'axios';
 import style from './LoginPage.module.css';
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 function Login() {
 	const [ username, setUsername ] = useState('');
 	const [ password, setPassword ] = useState('');

@@ -17,7 +17,7 @@ function PostPage() {
 				setPost(res.data);
 			})
 			.catch((err) => console.log(err));
-	}, []);
+	}, [id]);
 	console.log(post);
 	if (post === undefined) {
 		return '';

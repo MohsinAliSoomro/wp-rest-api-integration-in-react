@@ -3,32 +3,33 @@ import Layout from '../../component/layout/Layout';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import style from '../LoginPage/LoginPage.module.css';
-import { useParams }from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 function CreatePost() {
-    const { id } = useParams();
-    const [post,setPost]=useState()
+	const { id } = useParams();
 	const [ title, setTitle ] = useState();
 	const [ content, setContent ] = useState();
 	const [ message, setMessage ] = useState({ success: 'Publish', message: '' });
 	const history = useHistory();
-	useEffect(() => {
-		if (!localStorage.getItem('token')) {
-			history.push('login');
-        }
-        else {
-            axios
-			.get('http://www.holandi.nl/wp-json/wp/v2/posts/' + id)
-			.then((res) => {
-				if (res === undefined) {
-					return '';
-				}
-                setPost(res.data);
-                setTitle(res.data.title.rendered)
-                setContent(res.data.content.rendered)
-			})
-			.catch((err) => console.log(err));
-        }
-	},[id]);
+	useEffect(
+		() => {
+			if (!localStorage.getItem('token')) {
+				history.push('login');
+			} else {
+				axios
+					.get('http://www.holandi.nl/wp-json/wp/v2/posts/' + id)
+					.then((res) => {
+						if (res === undefined) {
+							return '';
+						}
+						
+						setTitle(res.data.title.rendered);
+						setContent(res.data.content.rendered);
+					})
+					.catch((err) => console.log(err));
+			}
+		},
+		[ id,history ]
+	);
 	const Logout = (e) => {
 		e.preventDefault();
 		localStorage.removeItem('token');
@@ -46,7 +47,7 @@ function CreatePost() {
 			status: 'publish'
 		};
 		axios
-			.post('http://www.holandi.nl/wp-json/wp/v2/posts/'+id, formdata, {
+			.post('http://www.holandi.nl/wp-json/wp/v2/posts/' + id, formdata, {
 				headers: {
 					'Content-Type': 'application/json',
 					Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -60,13 +61,13 @@ function CreatePost() {
 			.catch((err) => {
 				setMessage({ success: 'Error', message: 'Something wrong here' });
 			});
-    };
-    console.log('edit=>',post)
+	};
+
 	return (
 		<Layout>
 			<div>
 				{message.message && <p>{message.message}</p>}
-<h1 style={{textAlign:'center'}}>Edit</h1>
+				<h1 style={{ textAlign: 'center' }}>Edit</h1>
 				<form style={{ textAlign: 'center' }} onSubmit={postData}>
 					<input
 						className={style.input}
