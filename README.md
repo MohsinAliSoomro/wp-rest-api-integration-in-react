@@ -46,6 +46,24 @@ get the secret key from given link or you put your own
 Now you get endpoint for authentication
 - `http://yourdomain.com/wp-json/jwt-auth/v1/token`
 
+```
+const loginData = {
+			username: "Username",
+			password: "Password"
+		};
+axios.post('http://yourdomain/wp-json/jwt-auth/v1/token', loginData)
+	.then((res) => {
+	    console.log(res.data);
+		localStorage.setItem('token', res.data.token);
+		localStorage.setItem('user_nicename', res.data.user_nicename);
+		localStorage.setItem('user_email', res.data.user_email);
+		localStorage.setItem('user_display_name', res.data.user_display_name);
+	})
+	.catch((err) => {
+	    console.log(err);
+	});
+```
+
 ## Crud Operation Endpoint for posts 
 
 ##### Using axios
