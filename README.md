@@ -54,43 +54,75 @@ Promise based HTTP client for the browser and node.js
 #### Get All post
 - `http://yourdomain.com/wp-json/wp/v2/posts`
 ```
-    axios.get('http://yourdomain/wp-json/wp/v2/posts')
-			.then((res) => {
-                console.log(res.data)	
-			})
-			.catch((err) => {
-				console.log(err);
-			});
+axios.get('http://yourdomain/wp-json/wp/v2/posts')
+	.then((res) => {
+        console.log(res.data)	
+	})
+	.catch((err) => {
+		console.log(err);
+});
 ```
 
 #### Post
 - `http://yourdomain.com/wp-json/wp/v2/posts`
 ```
-        const formdata = {
-			title: title,
-			content: content,
-			status: 'publish'
-		};
+const formdata = {
+	title: title,
+	content: content,
+	status: 'publish'
+};
         
-        axios.post('http://yourdomain/wp-json/wp/v2/posts', formdata, {
-				headers: {
-					'Content-Type': 'application/json',
-					Authorization: `Bearer ${localStorage.getItem('token')}`
+axios.post('http://yourdomain/wp-json/wp/v2/posts', formdata, {
+	headers: {
+		'Content-Type': 'application/json',
+		'Authorization': `Bearer ${localStorage.getItem('token')}`
 				}
-			})
-			.then((res) => {
-				console.log(res);
-				
-			})
-            .catch((err) => {
-                console.log(err)
-            });
+	})
+	.then((res) => {
+		console.log(res);			
+	})
+    .catch((err) => {
+        console.log(err)
+});
 ```
 
 #### Edit
 - `http://yourdomain.com/wp-json/wp/v2/posts/id`
+```
+const formdata = {
+	title: title,
+	content: content,
+	status: 'publish'
+};
+axios.post('http://yourdomain/wp-json/wp/v2/posts/'+id, formdata, {
+    headers: {
+	    'Content-Type': 'application/json',
+	    'Authorization': `Bearer ${localStorage.getItem('token')}`
+		}
+	})
+	.then((res) => {
+		console.log(res);
+	})
+	.catch((err) => {
+		console.log(res);
+});
+```
+
 
 #### Delete
 - `http://yourdomain.com/wp-json/wp/v2/posts/id`
-
+```
+axios.delete('http://yourdomain/wp-json/wp/v2/posts/' + id, {
+	headers: {
+		'Content-Type': 'application/json',
+		'Authorization': `Bearer ${localStorage.getItem('token')}`
+		}
+	})
+	.then((res) => {
+		console.log(res);
+	})
+	.catch((err) => {
+		console.log(err);
+});
+```
 
