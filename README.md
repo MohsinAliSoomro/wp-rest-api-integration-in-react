@@ -1,14 +1,17 @@
 
 # Wp-Api integration in reactjs app
 
-You need a plugin JWT Auth – WordPress JSON Web Token Authentication 
+You need a plugin 
+
+JWT Auth – WordPress JSON Web Token Authentication.
+WordPress JSON Web Token Authentication allows you to do REST API authentication via token. It is a simple, non-complex, and easy to use. This plugin probably is the most convenient way to do JWT Authentication in WordPress.
 by useful team
 
-Active the plugin
+Active the plugin   
 
 # steps 
 
-## Open the .htaccess file in root folder of wordpress and paste 
+#### Open the .htaccess file in root folder of wordpress and paste 
 
 ``
 RewriteCond %{HTTP:Authorization} ^(.*)
@@ -16,7 +19,7 @@ RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
 SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
 ``
 
-## Open the wp-config.php file in root folder of wordpress and paste 
+#### Open the wp-config.php file in root folder of wordpress and paste 
 get the secret key from given link or you put your own
 [Generate secret](https://api.wordpress.org/secret-key/1.1/salt/)
 
