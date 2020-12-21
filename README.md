@@ -2,7 +2,7 @@
 # Wp-Api integration in reactjs app
 The react app is integrated with wp rest api and crud operation on the posts
 
-[App](https://github.com/MohsinAliSoomro/wp-rest-api-integration-in-react/blob/master/src/records.gif)
+![App](https://github.com/MohsinAliSoomro/wp-rest-api-integration-in-react/blob/master/src/records.gif?raw=true)
 ##### Deploy
 [Demo](http://wp-api-site.surge.sh/)
 
