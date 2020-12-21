@@ -5,12 +5,14 @@ The react app is integrated with wp rest api and crud operation on the posts
 
 :point_right: :heavy_heart_exclamation: :point_left:
 
+##### Deploy
+[Demo](http://wp-api-site.surge.sh/)
+
 
 ![App](https://github.com/MohsinAliSoomro/wp-rest-api-integration-in-react/blob/master/src/records.gif?raw=true)
 
 
-##### Deploy
-[Demo](http://wp-api-site.surge.sh/)
+
 
 You need a plugin 
 
@@ -41,7 +43,7 @@ get the secret key from given link or you put your own
 Now you get endpoint for authentication
 - `http://yourdomain.com/wp-json/jwt-auth/v1/token`
 
-Crud Operation Endpoint for posts 
+##Crud Operation Endpoint for posts 
 #### Get All post
 - `http://www.holandi.nl/wp-json/wp/v2/posts`
 
