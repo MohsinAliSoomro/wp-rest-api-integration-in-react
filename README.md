@@ -48,15 +48,15 @@ Now you get endpoint for authentication
 
 ## Crud Operation Endpoint for posts 
 #### Get All post
-- `http://www.holandi.nl/wp-json/wp/v2/posts`
+- `http://yourdomain.com/wp-json/wp/v2/posts`
 
 #### Post
-- `http://www.holandi.nl/wp-json/wp/v2/posts`
+- `http://yourdomain.com/wp-json/wp/v2/posts`
 
 #### Edit
-- `http://www.holandi.nl/wp-json/wp/v2/posts/id`
+- `http://yourdomain.com/wp-json/wp/v2/posts/id`
 
 #### Delete
-- `http://www.holandi.nl/wp-json/wp/v2/posts/id`
+- `http://yourdomain.com/wp-json/wp/v2/posts/id`
 
 
