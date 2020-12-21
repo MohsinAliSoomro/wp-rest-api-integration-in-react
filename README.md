@@ -1,5 +1,7 @@
 
 # Wp-Api integration in reactjs app
+##### Deploy
+[Demo](http://wp-api-site.surge.sh/)
 
 You need a plugin 
 
@@ -13,20 +15,20 @@ Active the plugin
 
 #### Open the .htaccess file in root folder of wordpress and paste 
 
-``
-RewriteCond %{HTTP:Authorization} ^(.*)
-RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
-SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
-``
+
+- `RewriteCond %{HTTP:Authorization} ^(.*)`
+- `RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]`
+- `SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1`
+
 
 #### Open the wp-config.php file in root folder of wordpress and paste 
 get the secret key from given link or you put your own
 [Generate secret](https://api.wordpress.org/secret-key/1.1/salt/)
 
-``
-define('JWT_AUTH_SECRET_KEY', 'your-top-secret-key');
-define('JWT_AUTH_CORS_ENABLE', true);
-``
+
+- `define('JWT_AUTH_SECRET_KEY', 'your-top-secret-key');`
+- `define('JWT_AUTH_CORS_ENABLE', true);`
+
 Now you get endpoint for authentication
 http://yourdomain.com/wp-json/jwt-auth/v1/token
 
